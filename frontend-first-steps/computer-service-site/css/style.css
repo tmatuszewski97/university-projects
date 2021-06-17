@@ -1,0 +1,204 @@
+.main {
+  border: 3px solid #ffffff;
+  margin-top: 10px;
+}
+
+.logo {
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.logo h1 {
+  font-size: 4em;
+}
+
+.logo h2 {
+  font-size: 2em;
+}
+
+.menu {
+  border-bottom: 3px dashed #41a782;
+}
+
+.menu-item {
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 5px 0 5px;
+}
+
+.menu-left {
+  margin-top: 5px;
+  padding: 0;
+}
+
+.menu-left button {
+  border-radius: 12px;
+  margin-bottom: 5px;
+}
+
+.footer {
+  text-align: center;
+  border-top: 3px dashed #41a782;
+  margin-bottom: 5px;
+}
+
+.footer h1 {
+  margin-top: 3px;
+  font-size: 1em;
+  text-decoration: underline;
+}
+
+.footer .fa {
+  padding: 15px;
+  width: 45px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 1.3em;
+}
+
+.footer .fa:hover {
+  opacity: 0.7;
+  color: white;
+}
+
+.footer .fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.footer .fa-instagram {
+  background-image: linear-gradient(to right, #ffc662, #ff27b5);
+  color: white;
+}
+
+.fa-youtube {
+  background: #db1125;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.footer-center {
+  margin-top: 30px;
+}
+
+.footer-right {
+  margin-top: 23px;
+}
+
+#clock {
+  font-weight: bold;
+  color: #41a782;
+  display: inline-block;
+  font-family: Courier;
+  text-align: center;
+  border: 2px solid #ffffff;
+  padding: 5px;
+}
+
+.list-group-item {
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+}
+
+#slider {
+  width: 99%;
+  height: 200px;
+  background-color: #252626;
+  margin: auto;
+  position: relative;
+}
+
+#slider #slades {
+  width: 90%;
+  height: 200px;
+  background-color: #41a782;
+  border: 5px solid #ffffff;
+  margin: 0 0 0 5%;
+}
+
+#slider #slades .slade {
+  display: none;
+  text-align: center;
+}
+
+#slider #slades .active {
+  display: block;
+}
+
+.navi {
+  position: absolute;
+  font-size: 5em;
+  font-weight: bold;
+  color: #fff;
+  bottom: 25%;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+#slade1 {
+  background-image: url("../img/fix-3.jpg");
+  background-size: cover;
+  height: 100%;
+  /* https://pixabay.com/photos/hard-drive-hdd-hardware-computer-611517/ */
+}
+
+#slade2 {
+  background-image: url("../img/fix-2.jpg");
+  background-size: cover;
+  height: 100%;
+  /* https://pixabay.com/photos/computer-repair-technology-1239014/ */
+}
+
+#slade3 {
+  background-image: url("../img/fix-1.jpg");
+  background-size: cover;
+  height: 100%;
+  /* https://pixabay.com/photos/service-computers-repair-428541/ */
+}
+
+/*
+work1 - https://www.pexels.com/photo/person-soldering-chip-2628105/
+work2 - https://www.pexels.com/photo/selective-focus-photo-of-man-in-official-shirt-sitting-in-office-working-on-laptop-2451645/
+work3 - https://www.pexels.com/photo/close-up-photography-of-computer-motherboard-163125/
+happy - https://www.pexels.com/photo/man-in-red-crew-neck-sweatshirt-photography-941693/
+cash - https://www.pexels.com/photo/blur-cash-close-up-dollars-545065/
+nature1 - https://www.pexels.com/photo/gray-bridge-and-trees-814499/
+nature2 - https://www.pexels.com/photo/clouds-daylight-forest-grass-371589/
+nature3 - https://www.pexels.com/photo/daylight-forest-glossy-lake-443446/
+nature4 - https://www.pexels.com/photo/green-trees-under-blue-and-orange-sky-during-sunset-1107717/
+*/
+
+.section-main {
+  margin-bottom: 5px;
+}
+
+.article-section {
+  margin-top: 5px;
+}
+
+.aside-section {
+  text-align: center;
+}
+
+.aside-section h1 {
+  font-size: 2em;
+}
+
+.aside-media {
+  margin-top: 2%;
+}
