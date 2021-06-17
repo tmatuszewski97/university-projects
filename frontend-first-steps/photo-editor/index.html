@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Editor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="css/social.css" />
+    <link rel="stylesheet" href="css/logo-font.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="container box-section">
+      <div class="row logo-section">
+        <div class="col-md-12">
+          <div class="plate">
+            <p class="script"><span>Aplikacja</span></p>
+            <p class="shadow text1">PHOTO</p>
+            <p class="shadow text2">EDITOR</p>
+            <p class="script"><span>Wgraj obrazek i sprawdź działanie</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="row main-section">
+        <div class="col-md-6 photo-section">
+          <h1>Wgraj obrazek</h1>
+          <input type="file" id="img-input" />
+          <canvas id="canvas" class="w-100"></canvas>
+          <a id="download" download="obrazek.png">
+            <button type="button" onClick="download()">
+              Pobierz obrazek
+            </button></a
+          >
+        </div>
+        <div class="col-md-6 options-section">
+          <h1>Tutaj można zmieniać wszelakie parametry obrazka</h1>
+          <div id="legend">
+            <table id="ranges">
+              <caption>
+                Legenda - zakresy poszczególnych właściwości
+              </caption>
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">Właściwość</th>
+                  <th scope="col">Zakres</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Siła rozmazania</td>
+                  <td>0 - 20</td>
+                </tr>
+                <tr>
+                  <td>Współczynnik aktualnej jasności</td>
+                  <td>0 - <span id="infinity">&#8734;</span></td>
+                </tr>
+                <tr>
+                  <td>Przezroczystość</td>
+                  <td>0 - 1</td>
+                </tr>
+                <tr>
+                  <td>Kolory</td>
+                  <td>0 - 255</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <form>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="grey"
+                  onchange="colorChanger()"
+                />
+                <label for="grey"> Poszarzenie </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="negativ"
+                  onchange="colorChanger()"
+                />
+                <label for="negativ">Negatyw</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="blur">Siła rozmazania: </label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  id="blur"
+                  type="number"
+                  step="1"
+                  value="0"
+                  min="0"
+                  max="20"
+                  onchange="colorChanger()"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="brightness"
+                  >Współczynnik aktualnej jasności:
+                </label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  id="brightness"
+                  type="number"
+                  step="0.1"
+                  value="1"
+                  min="0"
+                  onchange="colorChanger()"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="opacity">Przezroczystość: </label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  id="opacity"
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  max="1"
+                  value="1"
+                  onchange="colorChanger()"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="red">Czerwony:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="range"
+                  min="-255"
+                  max="255"
+                  class="slider"
+                  value="10"
+                  onchange="colorChanger()"
+                  id="red"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="green">Zielony:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="range"
+                  min="-255"
+                  max="255"
+                  class="slider"
+                  value="10"
+                  onchange="colorChanger()"
+                  id="green"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="blue">Niebieski:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="range"
+                  min="-255"
+                  max="255"
+                  class="slider"
+                  value="10"
+                  onchange="colorChanger()"
+                  id="blue"
+                />
+              </div>
+            </div>
+            <h2>Poniżej możesz zarządzać filtrem</h2>
+            <div class="form-group">
+              <div class="col-md-12">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="filterUse"
+                  onchange="colorChanger()"
+                />
+                <label for="filterUse">Czy użyć filtra?</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="colorPicker">Wybierz kolor filtra:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="color"
+                  id="colorPicker"
+                  value="#ff0000"
+                  onchange="colorChanger()"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="option1">Położenie w poziomie:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="range"
+                  min="1"
+                  max="600"
+                  value="1"
+                  class="slider"
+                  onchange="colorChanger()"
+                  id="option1"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="option2">Wysokość:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="range"
+                  min="-2500"
+                  max="2500"
+                  value="100"
+                  class="slider"
+                  onchange="colorChanger()"
+                  id="option2"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-left">
+                <label for="option3">Szerokość:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="range"
+                  min="1"
+                  max="1200"
+                  value="300"
+                  class="slider"
+                  onchange="colorChanger()"
+                  id="option3"
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-md-12 form-group-right">
+                <label for="option4">Gęstość:</label>
+              </div>
+              <div class="col-md-12 form-group-right">
+                <input
+                  type="range"
+                  min="1"
+                  max="300"
+                  value="150"
+                  class="slider"
+                  onchange="colorChanger()"
+                  id="option4"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row footer-section">
+        <div class="col-md-3 footer-left">
+          <a
+            href="https://www.facebook.com"
+            class="fa fa-facebook"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+          <a
+            href="https://www.instagram.com"
+            class="fa fa-instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+          <a
+            href="https://www.youtube.com"
+            class="fa fa-youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+          <a
+            href="https://twitter.com"
+            class="fa fa-twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+        </div>
+        <div class="col-md-6 footer-center">
+          <p>&copy; Copyright 2020 by Tomasz Matuszewski</p>
+        </div>
+        <div class="col-md-3 footer-right"></div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/photo_changer.js"></script>
+  </body>
+</html>
