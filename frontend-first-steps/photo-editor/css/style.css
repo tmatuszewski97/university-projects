@@ -1,0 +1,126 @@
+.box-section {
+  font-family: Times, Verdana, sans-serif;
+  background-image: linear-gradient(to top, #404040, #41a782);
+  margin-top: 0.2%;
+  color: black;
+}
+
+.logo-section {
+  background-image: linear-gradient(to bottom, #222, #41a782);
+  color: #41a782;
+  text-align: center;
+}
+
+.main-section {
+  border: 3px solid #41a782;
+}
+
+.main-section h1 {
+  font-size: 1.5em;
+}
+
+.main-section h2 {
+  font-size: 1.5em;
+}
+
+.photo-section {
+  background-color: #e7e7e7;
+}
+
+canvas {
+}
+
+.form-group {
+  margin: 0.2% 0 0 0;
+}
+
+.options-section {
+  text-align: center;
+}
+
+.options-section label {
+  font-weight: bold;
+  font-size: 1em;
+}
+
+caption {
+  color: white;
+  margin-top: -2%;
+}
+
+#ranges {
+  border: 1px solid black;
+  width: 100%;
+}
+
+#ranges th {
+  color: #000000;
+  border-bottom: 1px solid black;
+}
+
+#ranges tr {
+  color: white;
+}
+
+#infinity {
+  font-size: 1.5em;
+}
+
+#option2 {
+  direction: rtl;
+}
+
+.footer-section {
+  font-weight: bold;
+  background-color: #343434;
+  background-image: linear-gradient(to bottom, #292929, #222);
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+}
+
+.footer-section .fa {
+  padding: 15px;
+  width: 45px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 1.3em;
+}
+
+.footer-section .fa:hover {
+  opacity: 0.7;
+  color: white;
+}
+
+.footer-section .fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+
+.footer-section .fa-instagram {
+  background-image: linear-gradient(to right, #ffc662, #ff27b5);
+  color: white;
+}
+
+.fa-youtube {
+  background: #db1125;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55acee;
+  color: white;
+}
+
+.footer-left {
+  text-align: center;
+}
+
+.footer-center {
+  text-align: center;
+  color: #41a782;
+  font-size: 1em;
+}
+
+.footer-right {
+}
