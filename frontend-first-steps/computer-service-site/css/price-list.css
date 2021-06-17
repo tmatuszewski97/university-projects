@@ -1,0 +1,25 @@
+caption {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: #41a782;
+}
+
+#color-change1, #color-change2 {
+    margin: 1%;
+}
+
+.price-for-fix tr{
+    background-color: #41a782;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.price-for-software-help tr{
+    background-color: #41a782;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.article-section-lg {
+    margin-top: 5px;
+}
